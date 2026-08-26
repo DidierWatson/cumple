@@ -240,7 +240,6 @@ function touchYarn(event) {
 
     }, 700);
 }
-}
 
 
 
