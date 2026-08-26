@@ -238,11 +238,6 @@ function touchYarn(event) {
             );
         });
 
-        // Mostrar botón después de unos segundos
-        setTimeout(() => {
-            restartButton.classList.add("show");
-        }, 3000);
-
     }, 700);
 }
 }
