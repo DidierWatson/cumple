@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Una pequeña sorpresa...</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="scene">
+
+        <div id="message">
+            <p>Hay algo acá...</p>
+        </div>
+
+        <!-- Ovillo -->
+        <button id="yarn" aria-label="Ovillo de lana">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Hilo -->
+                <path
+                    d="M35 115
+                       C10 80, 45 35, 90 45
+                       C145 55, 175 105, 150 145
+                       C125 180, 65 175, 45 145"
+                    fill="none"
+                    stroke="#d8b4a0"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+                <!-- Ovillo -->
+                <ellipse
+                    cx="100"
+                    cy="105"
+                    rx="63"
+                    ry="55"
+                    fill="#d8b4a0"
+                />
+
+                <path
+                    d="M48 100
+                       C70 70, 125 70, 155 105
+                       C130 135, 75 145, 48 120"
+                    fill="none"
+                    stroke="#b98d7a"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+                <path
+                    d="M60 65
+                       C80 95, 125 120, 150 135"
+                    fill="none"
+                    stroke="#b98d7a"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+                <path
+                    d="M45 120
+                       C80 100, 120 95, 158 115"
+                    fill="none"
+                    stroke="#ecd0c0"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+            </svg>
+        </button>
+
+        <!-- Gato -->
+        <div id="cat">
+
+            <div class="birthday-hat">
+                <div class="hat-ball"></div>
+            </div>
+
+            <div class="cat-body">
+
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+
+                <div class="face">
+
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
+
+                    <div class="nose"></div>
+
+                    <div class="mouth">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="whiskers left-whiskers">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                    <div class="whiskers right-whiskers">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Mensaje final -->
+        <div id="final-message">
+            <h1>¡Feliz cumpleaños Danita!</h1>
+            <p>Te quiero mucho! Que tengas un lindo día</p>
+        </div>
+
+        <!-- Audios -->
+        <audio id="purr" preload="auto">
+            <source src="assets/purr.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="purrAndMiaw" preload="auto">
+            <source src="assets/purrAndMiaw.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="celebration" preload="auto">
+            <source src="assets/celebration.mp3" type="audio/mpeg">
+        </audio>
+        <canvas id="confetti"></canvas>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
