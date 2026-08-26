@@ -7,7 +7,6 @@ const purr = document.getElementById("purr");
 const purrAndMiaw = document.getElementById("purrAndMiaw");
 const celebration = document.getElementById("celebration");
 const confettiCanvas = document.getElementById("confetti");
-const restartButton = document.getElementById("restart-button");
 const message = document.getElementById("message");
 
 const ctx = confettiCanvas.getContext("2d");
@@ -150,34 +149,6 @@ function animateConfetti() {
         );
     }
 }
-
-function restart() {
-
-    // Desbloquear el ovillo
-    locked = false;
-
-    // Reiniciar contador
-    taps = 0;
-
-    // Ocultar gato
-    cat.classList.remove("show");
-
-    // Ocultar mensaje final
-    finalMessage.classList.remove("show");
-
-    // Ocultar botón
-    restartButton.classList.remove("show");
-
-    // Mostrar mensaje inicial
-    message.style.opacity = "1";
-
-    // Restaurar posición del ovillo
-    yarn.classList.remove(
-        "move-one",
-        "move-two",
-        "disappear"
-    );
-
     // Detener sonidos
     purr.pause();
     purr.currentTime = 0;
@@ -281,8 +252,3 @@ function touchYarn(event) {
 
 // Pointer events funcionan tanto con mouse como con touch
 yarn.addEventListener("pointerup", touchYarn);
-
-restartButton.addEventListener(
-    "click",
-    restart
-);
