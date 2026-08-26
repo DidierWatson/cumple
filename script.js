@@ -7,8 +7,6 @@ const purr = document.getElementById("purr");
 const purrAndMiaw = document.getElementById("purrAndMiaw");
 const celebration = document.getElementById("celebration");
 const confettiCanvas = document.getElementById("confetti");
-const message = document.getElementById("message");
-
 const ctx = confettiCanvas.getContext("2d");
 
 let taps = 0;
@@ -149,29 +147,6 @@ function animateConfetti() {
         );
     }
 }
-    // Detener sonidos
-    purr.pause();
-    purr.currentTime = 0;
-
-    celebration.pause();
-    celebration.currentTime = 0;
-
-    // Limpiar confeti
-    confettiPieces = [];
-
-    if (confettiAnimation) {
-        cancelAnimationFrame(confettiAnimation);
-    }
-
-    ctx.clearRect(
-        0,
-        0,
-        window.innerWidth,
-        window.innerHeight
-    );
-}
-
-
 
 function playPurr() {
     purr.currentTime = 0;
@@ -213,32 +188,32 @@ function touchYarn(event) {
 
     } else if (taps === 3) {
 
-    locked = true;
+        locked = true;
 
-    message.style.opacity = "0";
+        message.style.opacity = "0";
+        // Primero hacemos desaparecer el ovillo
+        yarn.classList.add("disappear");
+        
+        // Mostramos el gato
+        setTimeout(() => {
 
-    yarn.classList.add("disappear");
+            cat.classList.add("show");
+            finalMessage.classList.add("show");
+            
+            createConfetti();
+            // Paramos el ronroneo
+            purr.pause();
+            purr.currentTime = 0;
 
-    setTimeout(() => {
+            // Reproducimos la celebración
+            celebration.currentTime = 0;
 
-        cat.classList.add("show");
-        finalMessage.classList.add("show");
+            celebration.play().catch(error => {
+                console.log("No se pudo reproducir la celebración:", error);
+            });
 
-        createConfetti();
-
-        purr.pause();
-        purr.currentTime = 0;
-
-        celebration.currentTime = 0;
-
-        celebration.play().catch(error => {
-            console.log(
-                "No se pudo reproducir la celebración:",
-                error
-            );
-        });
-
-    }, 700);
+        }, 700);
+    }
 }
 
 
